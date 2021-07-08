@@ -13,3 +13,25 @@ Changes that have been made:
 - Changed string-to-yojson implementations to go via `Js.Json` and a hack to account for the JSON representation of ints
   and floats being the same
 - Changed default mode to standard JSON rather than OCaml extensions
+
+
+## Error on Updating `bs-platform`
+
+```sh
+File "/Users/mando/Github/bs-fojson/node_modules/@roddynpm/bs-biniou/src/bi_outbuf.ml", line 56, characters 4-24:
+Error: The implementation /Users/mando/Github/bs-fojson/node_modules/@roddynpm/bs-biniou/src/bi_outbuf.ml
+       does not match the interface src/bi_outbuf.cmi:
+       Values do not match:
+         val create_output_writer :
+           ?len:int ->
+           ?shrlen:int -> < output : string -> int -> int -> unit; .. > -> t
+       is not included in
+         val create_output_writer :
+           ?len:int ->
+           ?shrlen:int -> < output : string -> int -> int -> int; .. > -> t
+       File "/Users/mando/Github/bs-fojson/node_modules/@roddynpm/bs-biniou/src/bi_outbuf.mli", line 70, characters 0-105:
+         Expected declaration
+       File "/Users/mando/Github/bs-fojson/node_modules/@roddynpm/bs-biniou/src/bi_outbuf.ml", line 56, characters 4-24:
+         Actual declaration
+bsb: [36/38] src/bi_inbuf.cmj
+```
